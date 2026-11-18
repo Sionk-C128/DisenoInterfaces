@@ -1,78 +1,12 @@
+
 import './App.css';
-
-// Datos de las habilidades que queremos mostrar.
-const habilidades = [
-  'Java',
-  'JavaScript',
-  'SQL',
-  'HTML',
-  'CSS'
-];
-
-// Datos de los proyectos académicos.
-const experiencias = [
-  {
-    puesto: 'Desarrollar un juego en Java',
-    empresa: 'Proyecto académico - DAM',
-    periodo: 'Proyecto de clase',
-    descripcion:
-      'Desarrollo de un juego de aventuras en Java ejecutado desde la consola de Eclipse. Incluye puzzles, exploración y mecánicas RPG. Siendo mi mayor orgullo.'
-  },
-  {
-    puesto: 'Desarrollo de aplicaciones y ejercicios',
-    empresa: 'Formación académica - DAM',
-    periodo: 'Durante el ciclo formativo',
-    descripcion:
-      'Realización de prácticas de programación y pequeños proyectos de clase, trabajando la lógica, la organización del código y la resolución de problemas.'
-  }
-];
-
-// Datos de los estudios.
-const estudios = [
-  {
-    titulo: 'Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)',
-    centro: 'CPIFP Los Enlaces',
-    descripcion: 'Estudios de Formación Profesional de Grado Superior.'
-  },
-  {
-    titulo: 'Certificado en los Fundamentos de Java',
-    centro: 'CPIFP Los Enlaces',
-    descripcion: 'Adquisición de conocimientos teóricos y prácticos en la programación orientada a objetos con Java.'
-  },
-  {
-    titulo: 'Certificado en la Programación de Bases de Datos mediante SQL',
-    centro: 'CPIFP Los Enlaces',
-    descripcion: 'Diseño, gestión y consultas de bases de datos relacionales.'
-  },
-  {
-    titulo: 'Certificado de nivel básico de Prevención de Riesgos Laborales',
-    centro: 'CPIFP Los Enlaces',
-    descripcion: 'Formación básica orientada a la seguridad y salud en el entorno laboral.'
-  },
-  {
-    titulo: 'Bachillerato',
-    centro: 'IES Tiempos Modernos',
-    descripcion: 'Estudios de Bachillerato.'
-  },
-  {
-    titulo: 'Educación Secundaria Obligatoria (ESO)',
-    centro: 'IES Tiempos Modernos',
-    descripcion: 'Graduado en Educación Secundaria Obligatoria.' 
-  }
-];
-
-// Datos de idiomas.
-const idiomas = [
-  { idioma: 'Español', nivel: 'Nativo' },
-  { idioma: 'Inglés', nivel: 'Medio' }
-];
 
 function App() {
   return (
-    <main className="contenedor-principal">
+    <div className="contenedor-principal">
 
-      {/* CABECERA: fotografía, nombre, título y contacto */}
-      <header className="header">
+      {/* Cabecera */}
+      <div className="header">
         <img
           src="/foto-perfil.jpg"
           alt="Fotografía de perfil"
@@ -93,15 +27,14 @@ function App() {
           <span>📍 Zaragoza</span>
           <span>💻 GitHub: Sionk-C128</span>
         </div>
-      </header>
+      </div>
 
-      {/* CONTENIDO PRINCIPAL EN DOS COLUMNAS */}
+      {/* Sobre Mí */}
       <div className="contenido">
 
-        {/* COLUMNA IZQUIERDA (1/4): Sobre mí, Idiomas y Habilidades */}
         <div className="columna-izquierda">
 
-          <section className="seccion">
+          <div className="seccion">
             <h2 className="titulo-seccion">Sobre mí</h2>
 
             <p className="texto-sobre-mi">
@@ -113,93 +46,201 @@ function App() {
               Aspiro a poder desarrollar mis propios proyectos
               o formar parte de grandes referentes de la industria como Nintendo o Steam.
             </p>
-          </section>
+          </div>
 
-          <section className="seccion">
+          {/* Idiomas */}
+          <div className="seccion">
             <h2 className="titulo-seccion">Idiomas</h2>
 
             <div className="lista-idiomas">
-              {idiomas.map((item) => (
-                <div className="tarjeta-idioma" key={item.idioma}>
-                  <span className="nombre-idioma">{item.idioma}</span>
-                  <span className="nivel-idioma">{item.nivel}</span>
-                </div>
-              ))}
-            </div>
-          </section>
 
-          <section className="seccion">
+              <div className="tarjeta-idioma">
+                <span className="nombre-idioma">Español</span>
+                <span className="nivel-idioma">Nativo</span>
+              </div>
+
+              <div className="tarjeta-idioma">
+                <span className="nombre-idioma">Inglés</span>
+                <span className="nivel-idioma">Medio</span>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Habilidades */}
+          <div className="seccion">
             <h2 className="titulo-seccion">Habilidades</h2>
 
             <div className="lista-habilidades">
-              {habilidades.map((habilidad) => (
-                <div className="habilidad" key={habilidad}>
-                  <span className="punto-habilidad"></span>
-                  {habilidad}
-                </div>
-              ))}
+
+              <div className="habilidad">
+                <span className="punto-habilidad"></span>
+                Java
+              </div>
+
+              <div className="habilidad">
+                <span className="punto-habilidad"></span>
+                JavaScript
+              </div>
+
+              <div className="habilidad">
+                <span className="punto-habilidad"></span>
+                SQL
+              </div>
+
+              <div className="habilidad">
+                <span className="punto-habilidad"></span>
+                HTML
+              </div>
+
+              <div className="habilidad">
+                <span className="punto-habilidad"></span>
+                CSS
+              </div>
+
             </div>
-          </section>
+          </div>
 
         </div>
 
-        {/* COLUMNA DERECHA (3/4): Experiencia/Proyectos y Educación */}
+        {/* Experiencia y Educación */}
         <div className="columna-derecha">
 
-          <section className="seccion">
+          {/* Experiencia y Proyectos */}
+          <div className="seccion">
             <h2 className="titulo-seccion">Experiencia y proyectos</h2>
 
-            {experiencias.map((experiencia) => (
-              <article
-                className="item-experiencia"
-                key={experiencia.puesto}
-              >
-                <h3>{experiencia.puesto}</h3>
+            <div className="item-experiencia">
+              <h3>Desarrollar un juego en Java</h3>
 
-                <p className="empresa">
-                  {experiencia.empresa}
-                </p>
+              <p className="empresa">
+                Proyecto académico - DAM
+              </p>
 
-                <p className="periodo">
-                  {experiencia.periodo}
-                </p>
+              <p className="periodo">
+                Proyecto de clase
+              </p>
 
-                <p className="descripcion-item">
-                  {experiencia.descripcion}
-                </p>
-              </article>
-            ))}
-          </section>
+              <p className="descripcion-item">
+                Desarrollo de un juego de aventuras en Java ejecutado
+                desde la consola de Eclipse. Incluye puzzles, exploración
+                y mecánicas RPG. Siendo mi mayor orgullo.
+              </p>
+            </div>
 
-          <section className="seccion">
+            <div className="item-experiencia">
+              <h3>Desarrollo de aplicaciones y ejercicios</h3>
+
+              <p className="empresa">
+                Formación académica - DAM
+              </p>
+
+              <p className="periodo">
+                Durante el ciclo formativo
+              </p>
+
+              <p className="descripcion-item">
+                Realización de prácticas de programación y pequeños
+                proyectos de clase, trabajando la lógica, la organización
+                del código y la resolución de problemas.
+              </p>
+            </div>
+
+          </div>
+
+          {/* Educación */}
+          <div className="seccion">
             <h2 className="titulo-seccion">Educación</h2>
 
-            {estudios.map((estudio) => (
-              <article className="item-experiencia" key={estudio.titulo}>
-                <h3>{estudio.titulo}</h3>
+            <div className="item-experiencia">
+              <h3>
+                Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)
+              </h3>
 
-                <p className="centro">
-                  {estudio.centro}
-                </p>
+              <p className="centro">
+                CPIFP Los Enlaces
+              </p>
 
-                <p className="descripcion-item">
-                  {estudio.descripcion}
-                </p>
-              </article>
-            ))}
-          </section>
+              <p className="descripcion-item">
+                Estudios de Formación Profesional de Grado Superior.
+              </p>
+            </div>
+
+            <div className="item-experiencia">
+              <h3>Certificado en los Fundamentos de Java</h3>
+
+              <p className="centro">
+                CPIFP Los Enlaces
+              </p>
+
+              <p className="descripcion-item">
+                Adquisición de conocimientos teóricos y prácticos
+                en la programación orientada a objetos con Java.
+              </p>
+            </div>
+
+            <div className="item-experiencia">
+              <h3>Certificado en la Programación de Bases de Datos mediante SQL</h3>
+
+              <p className="centro">
+                CPIFP Los Enlaces
+              </p>
+
+              <p className="descripcion-item">
+                Diseño, gestión y consultas de bases de datos relacionales.
+              </p>
+            </div>
+
+            <div className="item-experiencia">
+              <h3>Certificado de nivel básico de Prevención de Riesgos Laborales</h3>
+
+              <p className="centro">
+                CPIFP Los Enlaces
+              </p>
+
+              <p className="descripcion-item">
+                Formación básica orientada a la seguridad y salud
+                en el entorno laboral.
+              </p>
+            </div>
+
+            <div className="item-experiencia">
+              <h3>Bachillerato</h3>
+
+              <p className="centro">
+                IES Tiempos Modernos
+              </p>
+
+              <p className="descripcion-item">
+                Estudios de Bachillerato.
+              </p>
+            </div>
+
+            <div className="item-experiencia">
+              <h3>Educación Secundaria Obligatoria (ESO)</h3>
+
+              <p className="centro">
+                IES Tiempos Modernos
+              </p>
+
+              <p className="descripcion-item">
+                Graduado en Educación Secundaria Obligatoria.
+              </p>
+            </div>
+
+          </div>
 
         </div>
 
       </div>
 
-      {/* PIE DE PÁGINA */}
-      <footer className="footer">
+      {/* Pie de página */}
+      <div className="footer">
         <p>Diseñado y desarrollado con React</p>
         <p>© 2026 - Mi currículum personal</p>
-      </footer>
+      </div>
 
-    </main>
+    </div>
   );
 }
 

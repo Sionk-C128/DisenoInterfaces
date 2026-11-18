@@ -1,87 +1,69 @@
-/* CONFIGURACIÓN GENERAL */
 
+/* Configuración general */
 * {
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
+  background: linear-gradient(to bottom right, #DDF5FA, #B6E9E7, #E1F8EC);
   min-height: 100vh;
-  padding: 35px 18px;
+  padding: 20px;
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
   color: #123B56;
-
-  background:
-    radial-gradient(circle at 15% 20%, #80E6D0 0%, transparent 30%),
-    radial-gradient(circle at 85% 80%, #43C6E8 0%, transparent 35%),
-    linear-gradient(135deg, #DDF5FA, #B6E9E7, #E1F8EC);
 }
 
 #root {
   width: 100%;
 }
 
-/* CONTENEDOR PRINCIPAL */
-
+/* Contenedor principal */
 .contenedor-principal {
   max-width: 1050px;
   margin: 0 auto;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(20, 100, 130, 0.18);
   overflow: hidden;
-  border-radius: 28px;
-  background: rgba(255, 255, 255, 0.82);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  box-shadow:
-    0 20px 60px rgba(20, 100, 130, 0.18),
-    inset 0 1px 5px rgba(255, 255, 255, 0.9);
 }
 
-/* CABECERA */
-
+/* Cabecera */
 .header {
-  position: relative;
-  overflow: hidden;
-  padding: 55px 25px;
-  text-align: center;
+  background: linear-gradient(to right, #087CA7, #43C6E8, #42D6B0);
   color: white;
-
-  background:
-    radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.25), transparent 30%),
-    linear-gradient(120deg, #087CA7, #43C6E8, #42D6B0);
+  padding: 40px;
+  text-align: center;
 }
 
 .foto-perfil {
-  display: block;
-  margin: 0 auto 15px;
-  width: 145px;
-  height: 145px;
-  object-fit: cover;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  border: 5px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 8px 25px rgba(0, 55, 80, 0.25);
+  border: 4px solid white;
+  margin-bottom: 20px;
+  object-fit: cover;
 }
 
 .etiqueta-header {
   display: inline-block;
   padding: 7px 16px;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  background-color: rgba(255, 255, 255, 0.2);
   font-size: 12px;
   letter-spacing: 2px;
   font-weight: bold;
 }
 
 .header h1 {
-  font-size: clamp(30px, 5vw, 45px);
-  margin: 15px 0 8px;
-  text-shadow: 0 3px 12px rgba(0, 50, 80, 0.2);
+  font-size: 40px;
+  margin: 10px 0;
 }
 
 .header h2 {
-  font-size: 19px;
+  font-size: 20px;
   font-weight: normal;
-  margin: 0 0 25px;
-  opacity: 0.95;
+  opacity: 0.9;
+  margin: 10px 0 25px;
 }
 
 .datos-contacto {
@@ -94,13 +76,11 @@ body {
 .datos-contacto span {
   padding: 9px 15px;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.18);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.18);
   font-size: 13px;
 }
 
-/* CONTENIDO Y ESTRUCTURA DE DOS COLUMNAS */
-
+/* Contenido y columnas */
 .contenido {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -115,25 +95,19 @@ body {
   gap: 20px;
 }
 
+/* Secciones */
 .seccion {
-  margin: 0;
   padding: 25px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.72);
+  margin: 0;
+  background-color: #F9FCFC;
+  border-radius: 15px;
   border: 1px solid #D9F0F4;
-  box-shadow: 0 5px 20px rgba(30, 120, 145, 0.07);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  height: 100%;
-}
-
-.seccion:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(30, 120, 145, 0.13);
 }
 
 .titulo-seccion {
+  font-size: 22px;
+  font-weight: bold;
   color: #087CA7;
-  font-size: 20px;
   margin: 0 0 18px;
   padding-bottom: 10px;
   border-bottom: 2px solid #D9F0F4;
@@ -146,8 +120,7 @@ body {
   margin: 0;
 }
 
-/* HABILIDADES E IDIOMAS */
-
+/* Habilidades */
 .lista-habilidades {
   display: flex;
   flex-wrap: wrap;
@@ -158,12 +131,12 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 9px 14px;
+  background: linear-gradient(to right, #DDF5FA, #E1F8EC);
+  padding: 10px 15px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #DDF5FA, #E1F8EC);
   border: 1px solid #A8DFDE;
-  color: #087CA7;
   font-weight: bold;
+  color: #087CA7;
   font-size: 13px;
 }
 
@@ -171,10 +144,10 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #42CDAA;
-  box-shadow: 0 0 6px rgba(66, 205, 170, 0.6);
+  background-color: #42CDAA;
 }
 
+/* Idiomas */
 .lista-idiomas {
   display: flex;
   flex-direction: column;
@@ -187,7 +160,7 @@ body {
   align-items: center;
   padding: 10px 14px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #DDF5FA, #E1F8EC);
+  background: linear-gradient(to right, #DDF5FA, #E1F8EC);
   border: 1px solid #A8DFDE;
 }
 
@@ -200,48 +173,43 @@ body {
 .nivel-idioma {
   padding: 4px 10px;
   border-radius: 10px;
-  background: #087CA7;
+  background-color: #087CA7;
   color: white;
   font-size: 11px;
   font-weight: bold;
 }
 
-/* EXPERIENCIA Y EDUCACIÓN */
-
+/* Experiencia y educación */
 .item-experiencia {
-  position: relative;
-  padding: 5px 0 18px 18px;
-  margin-bottom: 16px;
-  border-left: 3px solid #42C6B4;
-}
-
-.item-experiencia:last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
+  border-left: 4px solid #42C6B4;
+  padding-left: 20px;
+  margin-bottom: 20px;
 }
 
 .item-experiencia h3 {
+  font-size: 18px;
+  font-weight: bold;
   color: #123B56;
-  font-size: 17px;
-  margin: 0 0 6px;
+  margin: 5px 0;
 }
 
-.empresa, .centro {
+.empresa,
+.centro {
   color: #078AA2;
   font-weight: bold;
-  margin: 4px 0;
+  margin: 5px 0;
   font-size: 13px;
 }
 
 .periodo {
+  background-color: #DDF5FA;
   display: inline-block;
-  padding: 5px 11px;
-  border-radius: 12px;
-  background: #DDF5FA;
+  padding: 5px 15px;
+  border-radius: 15px;
+  font-size: 12px;
+  margin: 5px 0;
   color: #087CA7;
-  font-size: 11px;
   font-weight: bold;
-  margin: 6px 0;
 }
 
 .descripcion-item {
@@ -251,22 +219,20 @@ body {
   margin: 6px 0 0;
 }
 
-/* PIE DE PÁGINA */
-
+/* Pie de página */
 .footer {
   padding: 22px;
   text-align: center;
   color: #4D8290;
   font-size: 12px;
-  background: linear-gradient(90deg, #DDF5FA, #E1F8EC);
+  background: linear-gradient(to right, #DDF5FA, #E1F8EC);
 }
 
 .footer p {
   margin: 5px 0;
 }
 
-/* ADAPTACIÓN A MÓVILES */
-
+/* Adaptación a móviles */
 @media (max-width: 768px) {
   .contenido {
     grid-template-columns: 1fr;
