@@ -1,0 +1,606 @@
+
+/* =========================================
+   PÁGINA PRINCIPAL
+========================================= */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 28px 14px;
+  background: #111;
+}
+
+/* =========================================
+   CONTENEDOR DEL MÓVIL
+========================================= */
+
+.phone {
+  width: min(100%, 460px);
+  min-height: 690px;
+  padding: 20px 20px 14px;
+  border: 2px solid #d5d5d5;
+  border-radius: 38px;
+  background: #fafafa;
+  box-shadow: 0 12px 35px #0005;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow: hidden;
+}
+
+/* =========================================
+   BARRA DE ESTADO
+========================================= */
+
+.status-bar {
+  display: flex;
+  justify-content: end;
+  color: #888;
+  font-size: 13px;
+  padding: 0 4px;
+}
+
+/* =========================================
+   CABECERA DEL ARTISTA
+========================================= */
+
+.artist-header {
+  text-align: center;
+  margin-top: 4px;
+}
+
+.artist-header h1 {
+  font-size: clamp(29px, 7vw, 42px);
+  line-height: 1.05;
+  margin: 0;
+  font-weight: 750;
+  letter-spacing: -1.2px;
+}
+
+.artist-header p {
+  color: #777;
+  font-size: 22px;
+  margin: 5px 0 0;
+}
+
+/* =========================================
+   BARRA SUPERIOR DE PROGRESO
+========================================= */
+
+.top-progress {
+  height: 6px;
+  border-radius: 10px;
+  background: #757575;
+  overflow: hidden;
+}
+
+/* =========================================
+   INFORMACIÓN DEL ARTISTA
+========================================= */
+
+.artist-info {
+  display: grid;
+  grid-template-columns: 98px 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+/* IMAGEN DEL ARTISTA */
+
+.artist-photo {
+  width: 98px;
+  height: 98px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  background: #eee;
+}
+
+/* LÍNEAS SIMULADAS */
+
+.fake-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  width: 100%;
+}
+
+.fake-copy .line {
+  display: block;
+  height: 15px;
+  min-height: 15px;
+  max-height: 15px;
+  flex: 0 0 15px;
+  border-radius: 3px;
+  background: #b6b6b6;
+  box-sizing: border-box;
+}
+
+.line-long {
+  width: 100%;
+}
+
+.line-medium {
+  width: 75%;
+}
+
+.line-short {
+  width: 88%;
+}
+
+.fake-copy small {
+  color: #888;
+  font-size: 11px;
+  margin-top: 1px;
+}
+
+/* =========================================
+   REPRODUCTOR
+========================================= */
+
+.player {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* FILA PRINCIPAL */
+
+.player-main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* BOTONES CUADRADOS */
+
+.square-control {
+  width: 38px;
+  height: 30px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  background: #f7f7f7;
+  color: #438fe0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* =========================================
+   BARRA DE REPRODUCCIÓN
+========================================= */
+
+.track {
+  position: relative;
+  flex: 1;
+  height: 9px;
+  background: #dedede;
+  border-radius: 10px;
+}
+
+/* RELLENO DE LA BARRA */
+
+.track-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 44%;
+  height: 100%;
+  background: #888;
+  border-radius: 10px;
+}
+
+/* CÍRCULO DE REPRODUCCIÓN */
+
+.track-circle {
+  position: absolute;
+  left: 44%;
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  background: #777;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+}
+
+/* =========================================
+   FILA SECUNDARIA DEL REPRODUCTOR
+========================================= */
+
+.player-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9px;
+  background: #f0f0f0;
+  border-radius: 14px;
+  padding: 9px 12px;
+}
+
+/* BOTONES SECUNDARIOS */
+
+.player-secondary button {
+  width: 36px;
+  height: 31px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  color: #2784df;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* IMÁGENES DEL REPRODUCTOR */
+
+.player button img,
+.speaker img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  display: block;
+}
+
+/* BOTÓN DE REPRODUCIR */
+
+.play-button img {
+  width: 30px;
+  height: 30px;
+}
+
+/* BOTONES ANTERIOR Y SIGUIENTE */
+
+.player-secondary button[aria-label="Anterior"] img,
+.player-secondary button[aria-label="Siguiente"] img {
+  width: 28px;
+  height: 28px;
+}
+
+/* =========================================
+   BARRA DE VOLUMEN
+========================================= */
+
+.volume-slider {
+  position: relative;
+  width: 31%;
+  height: 8px;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  background: #fff;
+  flex-shrink: 1;
+}
+
+/* RELLENO DEL VOLUMEN */
+
+.volume-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 55%;
+  height: 100%;
+  background: #888;
+  border-radius: 10px;
+}
+
+/* CÍRCULO DEL VOLUMEN */
+
+.volume-circle {
+  position: absolute;
+  left: 55%;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  background: #777;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+}
+
+/* ICONO DE VOLUMEN */
+
+.speaker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* =========================================
+   CASILLAS DE VERIFICACIÓN
+========================================= */
+
+.checks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  padding: 0 4px;
+}
+
+.check-column {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.check-item input {
+  width: 15px;
+  height: 15px;
+  accent-color: #888;
+  margin: 0;
+}
+
+/* =========================================
+   BARRA DE BÚSQUEDA
+========================================= */
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 25px;
+  padding: 9px 13px;
+  color: #555;
+}
+
+.search-bar span {
+  font-size: 22px;
+  line-height: 15px;
+}
+
+.search-bar input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #222;
+  font-size: 17px;
+}
+
+/* =========================================
+   RUEDA DE EMOJIS
+========================================= */
+
+.emoji-carousel {
+  width: 100%;
+  height: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 600px;
+  overflow: hidden;
+  gap: 5px;
+  padding: 5px 0;
+  box-sizing: border-box;
+}
+
+/* CUADRADOS DE LOS EMOJIS */
+
+.emoji-card {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1.5px solid #999;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* EMOJIS */
+
+.emoji {
+  display: block;
+  font-size: 25px;
+  line-height: 1;
+}
+
+/* PRIMER EMOJI: EXTREMO IZQUIERDO */
+
+.emoji-position-0 {
+  width: 38px;
+  height: 75px;
+  transform: rotateY(25deg) scale(0.85);
+  opacity: 0.8;
+}
+
+/* SEGUNDO EMOJI: IZQUIERDA */
+
+.emoji-position-1 {
+  width: 55px;
+  height: 85px;
+  transform: rotateY(18deg);
+}
+
+/* EMOJI SELECCIONADO: CENTRO */
+
+.emoji-position-2 {
+  width: 100px;
+  height: 100px;
+  background: transparent;
+  border: 3px solid #000;
+  border-radius: 12px;
+  z-index: 2;
+  transform: scale(1);
+}
+
+.emoji-position-2 .emoji {
+  font-size: 58px;
+}
+
+/* CUARTO EMOJI: DERECHA */
+
+.emoji-position-3 {
+  width: 55px;
+  height: 85px;
+  transform: rotateY(-18deg);
+}
+
+/* QUINTO EMOJI: EXTREMO DERECHO */
+
+.emoji-position-4 {
+  width: 38px;
+  height: 75px;
+  transform: rotateY(-25deg) scale(0.85);
+  opacity: 0.8;
+}
+
+/* =========================================
+   NAVEGACIÓN INFERIOR
+========================================= */
+
+.bottom-nav {
+  margin-top: auto;
+  border-top: 1px solid #e5e5e5;
+  padding: 12px 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* CONTENEDORES DE LOS ICONOS */
+
+.bottom-nav span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ICONO HOME */
+
+.bottom-nav .icon-home {
+  width: 23px;
+  height: 23px;
+  object-fit: contain;
+}
+
+/* ICONO BACKWARD */
+
+.bottom-nav .icon-backward {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+/* ICONO MULTITASK */
+
+.bottom-nav .icon-multitask {
+  width: 23px;
+  height: 23px;
+  object-fit: contain;
+}
+
+/* IMÁGENES DE LA NAVEGACIÓN */
+
+.bottom-nav img {
+  display: block;
+}
+
+/* =========================================
+   ADAPTACIÓN A MÓVILES
+========================================= */
+
+@media (max-width: 390px) {
+
+  .phone {
+    padding: 17px 14px 12px;
+    border-radius: 28px;
+    gap: 13px;
+  }
+
+  .artist-info {
+    grid-template-columns: 86px 1fr;
+    gap: 12px;
+  }
+
+  .artist-photo {
+    width: 86px;
+    height: 86px;
+  }
+
+  .check-item {
+    font-size: 13px;
+  }
+
+  .player-secondary {
+    gap: 5px;
+    padding: 8px;
+  }
+
+  .player-secondary button {
+    width: 30px;
+  }
+
+  .player-secondary .volume-slider {
+    width: 27%;
+  }
+
+  /* RUEDA DE EMOJIS EN MÓVILES */
+
+  .emoji-carousel {
+    gap: 3px;
+    height: 115px;
+  }
+
+  .emoji-position-0,
+  .emoji-position-4 {
+    width: 32px;
+    height: 65px;
+  }
+
+  .emoji-position-1,
+  .emoji-position-3 {
+    width: 45px;
+    height: 75px;
+  }
+
+  .emoji-position-2 {
+    width: 85px;
+    height: 90px;
+  }
+
+  .emoji-position-2 .emoji {
+    font-size: 50px;
+  }
+
+  .emoji {
+    font-size: 21px;
+  }
+
+  /* ICONOS INFERIORES */
+
+  .bottom-nav .icon-home {
+    width: 23px;
+    height: 23px;
+  }
+
+  .bottom-nav .icon-backward {
+    width: 34px;
+    height: 34px;
+  }
+
+  .bottom-nav .icon-multitask {
+    width: 23px;
+    height: 23px;
+  }
+}
