@@ -1,13 +1,11 @@
+
+import alejandroImage from '@/assets/alejandro-sanz.jpg';
+
 export const artists = {
   alejandro: {
     name: 'Alejandro Sanz',
     subtitle: '- Más -',
-    image: '/images/alejandro-sanz.jpg'
-  },
-  bisbal: {
-    name: 'David Bisbal',
-    subtitle: '- Bulería -',
-    image: '/images/david-bisbal.svg',
+    image: alejandroImage
   }
 };
 
