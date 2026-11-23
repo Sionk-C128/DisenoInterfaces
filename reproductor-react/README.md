@@ -43,3 +43,5 @@ src/
 public/
   images/
 ```
+
+![Captura](./capturas/Diseño-de-reproductor-musical.png)

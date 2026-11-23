@@ -1,10 +1,6 @@
-// Imagen y líneas de texto simuladas.
-
-import alejandroImage from '@/assets/alejandro-sanz.jpg';
-
-// Imagen y líneas de texto simuladas.
+ // Imagen y líneas de texto simuladas.
 export default function ArtistInfo({
-  image = alejandroImage,
+  image,
   name = 'Alejandro Sanz'
 }) {
   return (
